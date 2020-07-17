@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title TripLog
+    %title TripLog2
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -10,7 +10,7 @@
   .header
     = link_to image_tag("ToripLog.png", class: "Trip_Log_Logo"), |
     root_path          
-  .body
+  %body
     = render 'layouts/notifications'
     = yield
   .footer

@@ -15,15 +15,9 @@
   @include logo_size;
 }
 
-.header {
-  width: 100vw;
-  border-bottom: 1px solid #696969;
-}
-
 .footer {
   width: 100vw;
-  border-top: 1px solid #696969;
-  padding-top: 10px;
+  background-color: #f5f5f5;
   display: flex;
   justify-content: space-between;
   &__left {

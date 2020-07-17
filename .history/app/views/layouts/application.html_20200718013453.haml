@@ -1,0 +1,35 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title TripLog2
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  %header
+    = link_to image_tag("ToripLog.png", class: "Trip_Log_Logo"), |
+    root_path          
+  %body
+    = render 'layouts/notifications'
+    = yield
+  %footer
+    .footer
+      .footer__left
+        = link_to image_tag("torilog.png", alt: "Rails logo", class: "torilog_Logo")
+        %p
+          ©️ 2020 Tori Log, Inc. All rights reserved
+      .footer__right
+        .footer__right__line
+          %i.fab.fa-line
+        .footer__right__facebook
+          %i.fab.fa-facebook-square
+        .footer__right__twitter
+          %i.fab.fa-twitter-square
+          == link_to 'Twitter', "https://twitter.com/share?url=#{https://twitter.com/home}", title: 'Twitter', target: '_blank'
+
+      
+
+
+
+
