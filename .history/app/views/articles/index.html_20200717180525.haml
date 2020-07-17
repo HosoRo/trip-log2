@@ -1,0 +1,14 @@
+%h1 記事一覧
+%p
+  = link_to "新規投稿", new_article_path
+%table
+  %tr
+    %th タイトル
+    %th 本文
+  - @articles.each do |article|
+    %tr
+      %td= article.title
+      %td= article.description
+      %td= link_to '編集', edit_article_path(article)
+      %td= link_to '詳細', article_path(article)
+      %td= link_to '削除', article_path(article), method: :delete, data: {confirm: "本当に削除しますか?"}
