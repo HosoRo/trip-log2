@@ -1,0 +1,16 @@
+- if @article.errors.any?
+  %h2 次のエラーにより、記事を保存できませんでした:
+  %ul
+    - @article.errors.full_messages.each do |msg|
+      %li= msg
+= form_for @article do |f|
+  %p
+    = f.label :タイトル
+    %br/
+    = f.text_field :title
+  %p
+    = f.label :本文
+    %br/
+    = f.text_area :description
+  %p
+    = f.submit
