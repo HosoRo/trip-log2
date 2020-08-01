@@ -1,0 +1,15 @@
+.header
+  .header__left
+    = link_to image_tag("ToripLog.png", class: "Trip_Log_Logo"), |
+  root_path       
+  .header__middle
+    = form_with(url: search_articles_path, local: true, method: :get, class: "search-form") do |f|
+      = f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
+      = f.submit "検索", class: "search-btn"
+  .header__right
+    .header__right__username
+      = current_user.name
+    .header__right__mypage
+      = link_to "マイページ", "/users/#{current_user.id}"
+    .header__right__logout
+      = link_to "ログアウト", destroy_user_session_path, method: :delete   

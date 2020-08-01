@@ -1,3 +1,5 @@
+%header
+= render('templates/header')
 %body
 = link_to 'About Trip-Log', about_path
 = link_to '記事一覧', articles_path
@@ -19,3 +21,7 @@
   .swiper-pagination
 
 = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"
+
+.toppage
+  .toppage__contents
+    .toppage__contents__content

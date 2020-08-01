@@ -94,6 +94,13 @@
 }
 
 //ここからuserページの装飾
+.header {
+  width: 100%;
+  border-bottom: 1px solid #696969;
+  img {
+    margin-left: 30px;
+  }
+}
 .AccountPage {
   width: 100vw;
   min-height: calc( 100vh - 15vh);
@@ -141,6 +148,7 @@
 
 .FormField {
   margin-bottom: 10px;
+  width: 30vw;
   &__label--normal {
     padding: 10px 0;
     letter-spacing: 1px;
