@@ -1,12 +1,24 @@
-* {
-  box-sizing: border-box;
-}
+// * {
+//   box-sizing: border-box;
+// }
 // 複数のプロパティを変数でまとめたものです。
 @mixin logo_size {
   width: 150px;
   height: 55px;
 }
+@mixin mypage_logout {
+  display: block;
+  background: #fffacd;
+  color: #fff;
+  height: 32px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  text-align: center;
+  box-sizing: border-box;
+  margin-right: 15px;
+}
 
+//ここからheaderとfooterの設定
 .Trip_Log_Logo {
   @include logo_size;
 }
@@ -18,16 +30,48 @@
 .header {
   width: 100vw;
   border-bottom: 1px solid #696969;
+  padding: 10px 0px 0px 0px;
+  display: flex;
+  &__left {
+    width: 10vw;
+    margin: 10px 0 10px 30px;
+  }
+  &__middle {
+    width: 50vw;
+  }
+  &__right {
+    width: 30vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &__username {
+      font-weight: bold;
+      margin-right: 15px;
+    }
+    &__mypage {
+      @include mypage_logout;
+    }
+    &__logout {
+      @include mypage_logout;
+    }
+  }
+}
+
+.body {
+  width: 100vw;
 }
 
 .footer {
   width: 100vw;
+  height: 10vh;
   border-top: 1px solid #696969;
-  padding-top: 10px;
+  padding-top: 5px;
   display: flex;
   justify-content: space-between;
   &__left {
     margin-left: 30px;
+    display: flex;
+    flex-direction: column ;
   }
   &__right {
     font-size: 30px;
@@ -49,18 +93,18 @@
   }
 }
 
+//ここからuserページの装飾
 .AccountPage {
   width: 100vw;
-  height: 100vh;
-  // margin: 60px auto;
+  min-height: calc( 100vh - 15vh);
   padding: 60px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
   display: flex;
   justify-content: space-between;
-  background-image: image-url('mount_fuji.jpg');
+  background-image: image-url('ca.jpg');
   background-size: cover;
-  // opacity: 0.7;
+  position: relative;
+  box-sizing: border-box;
+  overflow: scroll;
 }
 
 .AccountPage__title {
@@ -73,19 +117,20 @@
     letter-spacing: 3px;
     font-size: 40px;
     font-weight: bold;
+    color: #fffafa;
     &:after {
       content: "";
       display: block;
       width: 60px;
       margin-top: 5px;
-      border-bottom: 1px solid #38aef0;
+      border-bottom: 1px solid #fffafa;
     }
   }
 
   .Button {
     margin-top: 40px;
     color: #fff;
-    background-color: #38aef0;
+    background-color: #fa4141;
     font-weight: bold;
   }
 }
@@ -149,7 +194,7 @@
 .UserButton {
   margin-top: 20px;
   color: #fff;
-  background-color: #38aef0;
+  background-color: #fa4141;
 }
 
 #error_explanation {

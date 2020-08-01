@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'pages#index'
+  root to: 'pages#index'
   get 'about', to: 'pages#about'
-  get 'root', to: 'pages#about'
-  resources :articles
+  get 'root', to: 'pages#index'
+
+  get '/login', to: 'pages#index'
+  post '/login', to: 'pages#index'
+  # resources :articles, only: [:index, :new, :create, :destroy, :edit, :show, :update]
+  resources :articles do
+    resources :comments, only: :create
+    collection do
+      get 'search'
+    end
+  end
+  resources :users, only: :show
 end

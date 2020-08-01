@@ -1,0 +1,42 @@
+.ShowArticle {
+  padding: 50px;
+}
+
+.ShowArticle__page {
+  @include page_body
+}
+
+.ShowArticle__detail {
+  margin-top: 30px;
+}
+
+.ShowDetail__title {
+  font-size: 20px;
+}
+
+.ShowDetail__description {
+  font-size: 18px;
+  margin: 30px 0px;
+}
+
+.ShowDetail__image {
+  margin-bottom: 30px;
+}
+
+.ShowReturn {
+  width: 10vw;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  &__edit {
+    @include SubItems;
+  }
+  &__delete {
+    @include SubItems;
+  }
+  &__return {
+    @include SubItems;
+    width: 3vw;
+    display: block
+  }
+}

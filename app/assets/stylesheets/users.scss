@@ -1,0 +1,23 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.UserInfo {
+  width: 100vw;
+  height: calc( 100vh - 10vh);
+  padding: 30px 60px;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+.UserInfo__name {
+  width: 100vw;
+  font-size: 30px;
+  font-weight: 200;
+  letter-spacing: 0.15em;
+}
+
+.UserInfo__contents {
+  border: outset 2px;
+  padding: 10px 20px;
+  margin: 10px 15px;
+}

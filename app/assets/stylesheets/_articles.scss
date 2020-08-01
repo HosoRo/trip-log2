@@ -1,0 +1,160 @@
+//使えそうなメモ
+//   line-height: 1.57;
+//   letter-spacing: 0.15em;
+//   font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
+
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+//input & search form & a classの装飾
+form input,
+form textarea {
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
+
+form input[type="submit"] {
+  width: 30vw;
+  background-color: #fa4141;
+  border-radius: 20px;
+  color: #fff;
+  border: 0;
+  font-size: 18px;
+}
+
+form input[type="submit"]:hover {
+  background-color: #ffb6c1;}
+
+
+.search-form {
+  text-align: center;
+  padding-top: 32px;
+}
+
+.search-form .search-input {
+  width: 30%;
+  margin-right: 10px;
+}
+
+.search-form .search-btn {
+  width: 10%;
+}
+
+a {
+  text-decoration: none;
+  color: #666;
+}
+
+a:hover {
+  color: #57C3E9;
+}
+
+
+// 複数のプロパティを変数でまとめたものです。
+@mixin page_size {
+  width: 100vw;
+  height: 100vh;
+  padding: 30px 60px 120px 60px;
+}
+
+@mixin page_body {
+  width: 100vw;
+  font-size: 30px;
+  font-weight: 200;
+  letter-spacing: 0.15em;
+}
+
+@mixin page_fixed{
+  width: 100vw;
+  height: calc( 100vh - 10vh);
+  padding: 30px 60px;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+@mixin SubItems {
+  background: #eee8aa;
+  padding: 0 3px;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+
+//new.html.hamlのcssをここから装飾する
+.NewArticle {
+  @include page_size;
+}
+
+.NewArticle__page {
+  @include page_body;
+}
+
+.NewArticle__erroer {
+  padding: 20px 30px;
+  color: #ff0000;
+}
+
+.FormBox{
+  width: 80vw;
+  padding: 0px 30px;
+  overflow-x: scroll;
+  margin-bottom: 20px;
+}
+
+.ImageLogo__icon {
+  font-size: 50px;
+}
+
+.file {
+  display: none;
+}
+
+//index.html.hamlのcssをここから装飾する
+.ArticleTop {
+  @include page_fixed;
+}
+
+.ArticleTop__page {
+  @include page_body;
+}
+
+.ArticleTop__contents {
+
+}
+
+.Content {
+  border: outset 2px;
+  padding: 10px 20px;
+  margin: 10px 15px;
+  &__Image {
+  }
+  &__Title {
+  }
+  &__Description {
+  }
+}
+
+.SubItems {
+  width: 10vw;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  &__edit {
+    @include SubItems;
+  }
+  &__detail {
+    @include SubItems;
+  }
+  &__delete {
+    @include SubItems;
+  }
+}
+

@@ -1,0 +1,23 @@
+.UserInfo
+  .UserInfo__name
+    = @name
+    さんの投稿一覧
+  = link_to 'トップページ', root_path
+  = link_to 'アカウント編集', edit_user_registration_path
+  .UserInfo__contents
+    - @articles.each do |article|
+      投稿者
+      = article.user.name
+      %img{:src => "#{article.image}", :width => "100"}/
+      %br
+      = article.description
+      .name= article.title
+      .SubItems
+        .SubItems__edit
+          = link_to '編集', edit_article_path(article.id), method: :get
+        .SubItems__detail
+          = link_to '詳細', article_path(article.id), method: :get
+        .SubItems__delete
+          = link_to '削除', article_path(article.id), method: :delete, data: {confirm: "本当に削除しますか?"}
+          
+          

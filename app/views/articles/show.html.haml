@@ -1,7 +1,31 @@
-%h1 記事の詳細
-%p
-  タイトル: #{@article.title}
-%p
-  本文: #{@article.description}
-%p
-  = link_to '戻る', articles_path
+.ShowArticle
+  .ShowArticle__page
+    記事の詳細
+  .ShowArticle__detail
+    .ShowDetail__title
+      タイトル: #{@article.title}
+    .ShowDetail__description
+      本文: #{@article.description}
+    .ShowDetail__image
+      = image_tag(@article.image_url) if @article.image.present?
+  .ShowReturn
+  - if user_signed_in? && current_user.id == @article.user_id
+    .ShowReturn__edit
+      = link_to '編集', edit_article_path(@article.id), method: :get
+    .ShowReturn__delete
+      = link_to '削除', article_path(@article.id), method: :delete, data: {confirm: "本当に削除しますか?"}
+  .ShowReturn__return
+    = link_to '戻る', articles_path
+  .UserComments
+  - if current_user
+    = form_with(model: [@article, @comment], local: true) do |f|
+      =f.text_area :text, placeholder: "コメントする", row: "2"
+      =f.submit "投稿する"
+  - else
+    ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+  .Messages
+    コメント一覧
+    - if @comments
+      = @comments.each do |comment|
+        = link_to comment.user.name, user_path(comment.user.id)
+        = comment.description
