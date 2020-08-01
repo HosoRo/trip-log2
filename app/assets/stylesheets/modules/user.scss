@@ -27,17 +27,20 @@
   @include logo_size;
 }
 
+
 .header {
   width: 100vw;
+  height: 80px;
   border-bottom: 1px solid #696969;
   padding: 10px 0px 0px 0px;
   display: flex;
   &__left {
     width: 10vw;
-    margin: 10px 0 10px 30px;
+    margin: 10px 0 0 30px;
   }
   &__middle {
     width: 50vw;
+    margin-bottom: 30px;
   }
   &__right {
     width: 30vw;
@@ -52,6 +55,9 @@
       @include mypage_logout;
     }
     &__logout {
+      @include mypage_logout;
+    }
+    &__triplog {
       @include mypage_logout;
     }
   }

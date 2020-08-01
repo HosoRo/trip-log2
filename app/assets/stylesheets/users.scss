@@ -15,6 +15,20 @@
   font-weight: 200;
   letter-spacing: 0.15em;
 }
+.UserInfo__UnderLine {
+  display: flex;
+  &__toppage, &__AccountEdit {
+    display: block;
+    background: #fffacd;
+    color: #fff;
+    height: 32px;
+    padding: 5px 8px;
+    border-radius: 4px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-right: 15px;
+  }
+}
 
 .UserInfo__contents {
   border: outset 2px;

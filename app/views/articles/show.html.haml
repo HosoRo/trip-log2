@@ -1,31 +1,38 @@
+%header
+= render('templates/header')
 .ShowArticle
   .ShowArticle__page
     記事の詳細
   .ShowArticle__detail
-    .ShowDetail__title
+    .ShowArticle__detail__title
       タイトル: #{@article.title}
-    .ShowDetail__description
+    .ShowArticle__detail__description
       本文: #{@article.description}
-    .ShowDetail__image
+    .ShowArticle__detail__image
       = image_tag(@article.image_url) if @article.image.present?
-  .ShowReturn
+  .ShowArticle__ShowReturn
   - if user_signed_in? && current_user.id == @article.user_id
-    .ShowReturn__edit
-      = link_to '編集', edit_article_path(@article.id), method: :get
-    .ShowReturn__delete
-      = link_to '削除', article_path(@article.id), method: :delete, data: {confirm: "本当に削除しますか?"}
-  .ShowReturn__return
-    = link_to '戻る', articles_path
-  .UserComments
-  - if current_user
+    .ShowArticle__ShowReturn__Contents
+      .ShowArticle__ShowReturn__Contents__edit
+        = link_to '編集', edit_article_path(@article.id), method: :get
+      .ShowArticle__ShowReturn__Contents__delete
+        = link_to '削除', article_path(@article.id), method: :delete, data: {confirm: "本当に削除しますか?"}
+      .ShowArticle__ShowReturn__Contents__return
+        = link_to '戻る', articles_path
+
+- if current_user
+  .Comments
     = form_with(model: [@article, @comment], local: true) do |f|
-      =f.text_area :text, placeholder: "コメントする", row: "2"
-      =f.submit "投稿する"
-  - else
-    ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
-  .Messages
-    コメント一覧
-    - if @comments
-      = @comments.each do |comment|
-        = link_to comment.user.name, user_path(comment.user.id)
-        = comment.description
+      .Comments__text
+      %br
+        =f.text_area :text, placeholder: "コメントする", row: "2"
+      %br
+        =f.submit "投稿する"
+- else
+  ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+.Messages
+  コメント一覧
+  - if @comments
+    = @comments.each do |comment|
+      = link_to comment.user.name, user_path(comment.user.id)
+      = comment.description

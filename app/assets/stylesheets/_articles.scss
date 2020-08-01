@@ -13,9 +13,10 @@ html {
 //input & search form & a classの装飾
 form input,
 form textarea {
-  width: 100%;
-  margin: 5px 0 15px;
+  width: 30vw;
+  // margin: 5px 0 15px;
   padding: 10px;
+  margin-left: 50px;
   border: 1px solid #D8D8D8;
   border-radius: 5px;
   font-family: "游ゴシック", "YuGothic";
@@ -31,17 +32,19 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-  background-color: #ffb6c1;}
-
+  background-color: #ffb6c1;
+}
 
 .search-form {
   text-align: center;
-  padding-top: 32px;
+  padding-top: 20px;
+  
 }
 
 .search-form .search-input {
-  width: 30%;
-  margin-right: 10px;
+  width: 50%;
+  margin-bottom: 50px;
+  
 }
 
 .search-form .search-btn {
@@ -126,8 +129,20 @@ a:hover {
   @include page_body;
 }
 
-.ArticleTop__contents {
-
+.ArticleTop__page__items {
+  display: flex;
+  font-size: 16px;
+  &__toppage, &__newpost {
+    display: block;
+    background: #fffacd;
+    color: #fff;
+    height: 32px;
+    padding: 5px 8px;
+    border-radius: 4px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-right: 15px;
+  }
 }
 
 .Content {

@@ -1,8 +1,13 @@
+%header
+= render('templates/header')
 .ArticleTop
   .ArticleTop__page
     記事一覧
-  = link_to "新規投稿", new_article_path
-  = link_to 'トップページ', root_path
+    .ArticleTop__page__items
+      .ArticleTop__page__items__newpost
+        = link_to "新規投稿", new_article_path
+      .ArticleTop__page__items__toppage
+        = link_to 'トップページ', root_path
   .ArticleTop__contents
     .Content
       - @articles.each do |article|

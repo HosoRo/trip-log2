@@ -1,9 +1,14 @@
+%header
+= render('templates/header')
 .UserInfo
   .UserInfo__name
     = @name
     さんの投稿一覧
-  = link_to 'トップページ', root_path
-  = link_to 'アカウント編集', edit_user_registration_path
+  .UserInfo__UnderLine
+    .UserInfo__UnderLine__toppage
+      = link_to 'トップページ', root_path
+    .UserInfo__UnderLine__AccountEdit
+      = link_to 'アカウント編集', edit_user_registration_path
   .UserInfo__contents
     - @articles.each do |article|
       投稿者
@@ -19,5 +24,4 @@
           = link_to '詳細', article_path(article.id), method: :get
         .SubItems__delete
           = link_to '削除', article_path(article.id), method: :delete, data: {confirm: "本当に削除しますか?"}
-          
           
