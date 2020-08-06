@@ -18,11 +18,15 @@
       ©️ 2020 Tori Log, Inc. All rights reserved
     .footer__right
       .footer__right__line
-        %i.fab.fa-line
+        .line-it-button{"data-color" => "default", "data-count" => "false", "data-lang" => "ja", "data-size" => "small", "data-type" => "share-b", "data-url" => "http://localhost:3000/users/sign_in", "data-ver" => "3", :style => "display: none;"}
+        %script{:async => "async", :defer => "defer", :src => "https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js"}
       .footer__right__facebook
-        %i.fab.fa-facebook-square
+        =link_to "https://www.facebook.com/share.php?u=http://localhost:3000/users/sign_in/" do
+          %i.fab.fa-facebook-square
       .footer__right__twitter
-        %i.fab.fa-twitter-square
+        =link_to "http://twitter.com/share?url=#{request.url}/&text=旅の記録を楽しもう♪" do
+          %i.fab.fa-twitter-square
+          
             
 
       
