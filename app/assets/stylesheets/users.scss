@@ -1,6 +1,29 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@mixin page_fixed{
+  width: 100vw;
+  height: calc( 100vh - 10vh);
+  padding: 30px 60px;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+@mixin page_body {
+  width: 100vw;
+  font-size: 30px;
+  font-weight: 200;
+  letter-spacing: 0.15em;
+}
+
+@mixin SubItems {
+  background: #eee8aa;
+  padding: 0 3px;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+
 .UserInfo {
   @include page_fixed;
 }
