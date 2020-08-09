@@ -9,23 +9,31 @@
       .ArticleTop__page__items__toppage
         = link_to 'トップページ', root_path
   .ArticleTop__contents
-    .Content
+    .Contents
       - @articles.each do |article|
         .murata
           投稿者
           = link_to article.user.name, user_path(article.user.id), method: :get
-          .Content__Image
-          %img{:src => "#{article.image}", :width => "100"}/
-          .Content__Title
-          %li= article.title
-          .Contet__Description
-          %li= article.description
-          .SubItems
-            .SubItems__detail
-              = link_to '詳細', article_path(article.id), method: :get
-            - if user_signed_in? && current_user.id == article.user_id
-              .SubItems__edit
-                = link_to '編集', edit_article_path(article.id), method: :get
-              .SubItems__delete
-                = link_to '削除', article_path(article.id), method: :delete, data: {confirm: "本当に削除しますか?"}
-
+          .Content
+            .Content__Image
+              %img{:src => "#{article.image}", :width => "400"}/
+              = link_to article_path(article.id), method: :get
+            .Content__Title
+              = link_to article.title , article_path(article.id), method: :get
+            .Content__Description
+              = link_to article.description , article_path(article.id), method: :get
+            
+              -#   - @articles.each do |article|
+              -#   .panel.panel-success
+              -#     .panel-body
+              -#       = link_to(article.id,"/articles/#{article.id}")
+              -#     .panel-footer content_description
+              -# = paginate @articles
+          -# .SubItems
+          -#   .SubItems__detail
+          -#     = link_to '詳細', article_path(article.id), method: :get
+          -#   - if user_signed_in? && current_user.id == article.user_id
+          -#     .SubItems__edit
+          -#       = link_to '編集', edit_article_path(article.id), method: :get
+          -#     .SubItems__delete
+          -#       = link_to '削除', article_path(article.id), method: :delete, data: {confirm: "本当に削除しますか?"}
