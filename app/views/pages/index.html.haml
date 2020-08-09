@@ -1,3 +1,24 @@
-= link_to 'About Trip-Log', about_path
-= link_to '記事一覧', articles_path
-= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button'
+%header
+= render('templates/header')
+.swiper-container.top-carousel
+  -# slide wrapper
+  .swiper-wrapper
+    -# slides
+    .swiper-slide
+      = image_tag "ca.jpg", alt: "ocean", id: "assets", class: "TopImage", width: "800px", height: "500px"
+    .swiper-slide
+      = image_tag "mount_fuji.jpg", alt: "ocean", id: "assets", class: "TopImage", width: "300px"
+    .swiper-slide
+      = image_tag "ca.jpg", alt: "ocean", id: "assets", class: "TopImage", width: "300px"
+  -# if need navigation button 
+  .swiper-button-prev
+  .swiper-button-next
+  -# if need pagination 
+  .swiper-pagination
+
+= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"
+
+.toppage
+  .toppage__contents
+    .toppage__contents__content
+    = link_to '記事一覧', articles_path

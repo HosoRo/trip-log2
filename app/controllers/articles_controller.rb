@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :update, :show, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.includes(:user).order("created_at DESC")
   end
 
   def create
@@ -20,6 +20,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @article.comments.includes(:user)
   end
 
   def edit
@@ -41,9 +43,13 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
    end
 
+  def search
+    @articles = Article.search(params[:keyword])
+  end
+
   private
   def article_params
-    params.require(:article).permit(:title, :description)
+    params.require(:article).permit(:title, :description, :image).merge(user_id: current_user.id)
   end
 
   def set_article

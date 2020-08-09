@@ -1,16 +1,39 @@
-%h1 記事一覧
-%p
-  = link_to "新規投稿", new_article_path
-%table
-  %tr
-    %th タイトル
-    %th 本文
-  - @articles.each do |article|
-    %tr
-      %td= article.title
-      %td= article.description
-      %td= link_to '編集', edit_article_path(article)
-      %td= link_to '詳細', article_path(article)
-      %td= link_to '削除', article_path(article), method: :delete, data: {confirm: "本当に削除しますか?"}
-
-= link_to 'トップページ', root_path
+%header
+= render('templates/header')
+.ArticleTop
+  .ArticleTop__page
+    記事一覧
+    .ArticleTop__page__items
+      .ArticleTop__page__items__newpost
+        = link_to "新規投稿", new_article_path
+      .ArticleTop__page__items__toppage
+        = link_to 'トップページ', root_path
+  .ArticleTop__contents
+    .Contents
+      - @articles.each do |article|
+        .murata
+          投稿者
+          = link_to article.user.name, user_path(article.user.id), method: :get
+          .Content
+            .Content__Image
+              %img{:src => "#{article.image}", :width => "400"}/
+              = link_to article_path(article.id), method: :get
+            .Content__Title
+              = link_to article.title , article_path(article.id), method: :get
+            .Content__Description
+              = link_to article.description , article_path(article.id), method: :get
+            
+              -#   - @articles.each do |article|
+              -#   .panel.panel-success
+              -#     .panel-body
+              -#       = link_to(article.id,"/articles/#{article.id}")
+              -#     .panel-footer content_description
+              -# = paginate @articles
+          -# .SubItems
+          -#   .SubItems__detail
+          -#     = link_to '詳細', article_path(article.id), method: :get
+          -#   - if user_signed_in? && current_user.id == article.user_id
+          -#     .SubItems__edit
+          -#       = link_to '編集', edit_article_path(article.id), method: :get
+          -#     .SubItems__delete
+          -#       = link_to '削除', article_path(article.id), method: :delete, data: {confirm: "本当に削除しますか?"}

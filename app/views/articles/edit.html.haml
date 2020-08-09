@@ -1,4 +1,27 @@
-%h1 記事の編集
-= render 'form'
-%p
-  = link_to '戻る', articles_path
+%header
+= render('templates/header')
+.NewArticle
+  .NewArticle__page
+    記事の編集
+  = render 'form'
+  .NewArticle__form
+  = form_with(model: @article, local: true) do |f|
+    .FormBox
+      .FormBox__label--normal
+        = f.label :タイトル
+      .FormBox__input--normal
+        = f.text_field :title
+      .FormBox__label--normal
+        = f.label :本文
+      .FormBox__input--normal
+        = f.text_area :description, rows: 10
+      .ImageLogo
+        = image_tag(@article.image_url) if @article.image.present?
+        = f.label :image, class: 'ImageLogo__image' do
+          %br
+          = icon('far', 'image', class: 'ImageLogo__icon')
+          = f.file_field :image, class: 'file'
+    .action
+      = f.submit '更新する'
+    .return
+      = link_to '戻る', articles_path

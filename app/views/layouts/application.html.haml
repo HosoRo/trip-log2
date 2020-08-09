@@ -6,25 +6,27 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css"
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  .header
-    = link_to image_tag("ToripLog.png", class: "Trip_Log_Logo"), |
-    root_path          
+
   .body
     = render 'layouts/notifications'
     = yield
   .footer
     .footer__left
       = link_to image_tag("torilog.png", alt: "Rails logo", class: "torilog_Logo")
-      %p
-        ©️ 2020 Tori Log, Inc. All rights reserved
+      ©️ 2020 Tori Log, Inc. All rights reserved
     .footer__right
       .footer__right__line
-        %i.fab.fa-line
+        .line-it-button{"data-color" => "default", "data-count" => "false", "data-lang" => "ja", "data-size" => "small", "data-type" => "share-b", "data-url" => "http://localhost:3000/users/sign_in", "data-ver" => "3", :style => "display: none;"}
+        %script{:async => "async", :defer => "defer", :src => "https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js"}
       .footer__right__facebook
-        %i.fab.fa-facebook-square
+        =link_to "https://www.facebook.com/share.php?u=http://localhost:3000/users/sign_in/" do
+          %i.fab.fa-facebook-square
       .footer__right__twitter
-        %i.fab.fa-twitter-square
+        =link_to "http://twitter.com/share?url=#{request.url}/&text=旅の記録を楽しもう♪" do
+          %i.fab.fa-twitter-square
+          
             
 
       
