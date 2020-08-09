@@ -14,18 +14,23 @@
   cursor: pointer;
 }
 
+.Wrapper {
+  text-align: -webkit-center;
+}
 
 .ShowArticle {
   padding: 50px;
-  &__page {
-    @include page_body;
-  }
   &__detail {
-    margin-top: 30px;
+    @include page_body;
+    width: 1000px;
+    text-align: left;
     &__title {
-      font-size: 20px;
+      font-size: 32px;
+      font-weight: bold;
+      width: 1000px;
     }
     &__description {
+      width: 1000px;
       font-size: 18px;
       margin: 30px 0px;
     }
@@ -35,15 +40,20 @@
   }
   &__ShowReturn {
     &__Contents {
-      width: 10vw;
+      width: 1000px;
       display: flex;
-      justify-content: space-around;
       margin-bottom: 30px;
       &__edit {
         @include SubItems;
+        margin-right: 15px;
+        width: 3vw;
+        display: block
       }
       &__delete {
         @include SubItems;
+        margin-right: 15px;
+        width: 3vw;
+        display: block
       }
       &__return {
         @include SubItems;
@@ -54,7 +64,12 @@
   }
 }
 
+.Comments {
+  text-align: center;
+}
+
 .Messages {
   padding: 50px;
-  width: 100%;
+  width: 1000px;
+  text-align: left;
 }
