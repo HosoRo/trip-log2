@@ -2,4 +2,46 @@
 .About {
   height: 1000px;
   width: 100%;
+  padding-top: 100px;
+  margin-bottom: 50px;
+  &__Contents {
+    margin-bottom: 50px;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 200;
+    letter-spacing: 0.15em;
+    margin-left: 100px;
+  }
+  a {
+    margin-left: 100px;
+  }
+}
+
+.About__Body {
+  width: 100%;
+  height: 1000px;
+  background-image: image-url('vacation.jpg');
+  background-size: cover;
+  display: flex;
+  &__ParagraphLeft { 
+    width: 50%;
+  }
+  &__ParagraphRight {
+    width: 50%;
+    margin-top: 100px;
+    font-size: 24px;
+    line-height: 3;
+    color: #E04020;
+    &__FirstLine, &__ThirdLine {
+      text-align: center;
+      left: 500px;
+    }
+    &__SecondLine {
+      text-align: center;
+      left: 500px;
+      font-size: 50px;
+      font-weight: bold;
+    }
+  }
 }
