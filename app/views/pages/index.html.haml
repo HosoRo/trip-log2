@@ -1,50 +1,30 @@
 %header
 = render('templates/header')
-.swiper-container.top-carousel
-  -# slide wrapper
-  .swiper-wrapper
-    -# slides
-    .swiper-slide
-      = image_tag "ca.jpg", alt: "ocean", id: "assets", class: "TopImage", width: "800px", height: "500px"
-    .swiper-slide
-      = image_tag "mount_fuji.jpg", alt: "ocean", id: "assets", class: "TopImage", width: "300px"
-    .swiper-slide
-      = image_tag "ca.jpg", alt: "ocean", id: "assets", class: "TopImage", width: "300px"
-  -# if need navigation button 
-  .swiper-button-prev
-  .swiper-button-next
-  -# if need pagination 
-  .swiper-pagination
+%body
+  %ul.slider
+    %li
+      = link_to image_tag("ca.jpg", alt: "Rails logo", class: "torilog_Logo")
+    %li
+      = link_to image_tag("mount_fuji.jpg", alt: "Rails logo", class: "torilog_Logo")
+    %li
+      = link_to image_tag("ocean.jpg", alt: "Rails logo", class: "torilog_Logo")
+    %li
+      = link_to image_tag("ca.jpg", alt: "Rails logo", class: "torilog_Logo")
 
-= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"
-
-.toppage
-  .toppage__contents
-    .toppage__contents__content
-    = link_to '記事一覧', articles_path
+.TopPage
+  .TopPage__Contents
+    .TopPage__Contents__content
+      = link_to '記事一覧', articles_path
     - @articles.each do |article|
-      .TopNews
-        投稿者
-        = link_to article.user.name, user_path(article.user.id), method: :get
-        .TopPageContents
-          .TopPageContents__Image
-            %img{:src => "#{article.image}", :width => "400"}/
-            = link_to article_path(article.id), method: :get
-          .TopPageContents__Title
-            = link_to article.title , article_path(article.id), method: :get
-          .TopPageContents__Description
-            = link_to article.description , article_path(article.id), method: :get
-
-
--# .AllArticles
--#   .AllArticles__lists
--#   - @articles.each do |article|
--#     - if article.image?
--#     %a.AllArticles__lists__list(href="#")
--#       = image_tag article.article_images[0].image.url, size: "220x220"
--#       .AllArticles__lists__details
--#         %h3  
--#           = article.article_title
--#         %p
--#           = article.description
-          
+      .TopArticles
+        .TopArticles__TopNews
+          投稿者
+          = link_to article.user.name, user_path(article.user.id), method: :get
+          .TopPageContents
+            .TopPageContents__Image
+              %img{:src => "#{article.image}", :width => "400"}/
+              = link_to article_path(article.id), method: :get
+            .TopPageContents__Title
+              = link_to article.title , article_path(article.id), method: :get
+            .TopPageContents__Description
+              = link_to article.description , article_path(article.id), method: :get

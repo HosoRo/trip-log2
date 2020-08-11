@@ -1,20 +1,95 @@
-.Toppage {
+.slider {
+  position: relative;
   height: 500px;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1800px;
+  top: 50px;
+  img {
+    width: 1800px;
+    height: 500px;
+  } 
+  ul {
+    width: 300px;
+    margin: 5px auto 0;
+  }
+}
+.slick-prev::before,
+.slick-next::before {
+  color: black!important;
 }
 
-.TopNews {
-  float: left;
-  width: 300px;
+.fa.fa-angle-left.arrow.arrow-left.slick-arrow {
+  position: absolute;
+  color: #57C3E9;
+  font-size: 30px;
+  top: 500px;
+}
+
+.fa.fa-angle-right.arrow.arrow-right.slick-arrow {
+  position: absolute;
+  color: #57C3E9;
+  font-size: 30px;
+  left: 1780px;
+  
+}
+
+.slick-dots {
+  width: 2000px;
+  display: flex;
+  justify-content: center;
+  // position: absolute !important;
+  // bottom: 20px !important;
+  li {
+    font-size: 20px !important;
+    button:before {
+      // content: "●" !important;
+      font-size: 14px !important;
+      color: rgb(60, 60, 60) !important;
+    }
+  }
+}
+
+button#slick-slide-control00, button#slick-slide-control01, button#slick-slide-control02, button#slick-slide-control03 {
+  background-color: #57C3E9;;
+  color: #57C3E9;;
+  border: #57C3E9;;
+  border-radius: 20px;
+  margin-right: 20px;
+  font-size: 5px;
+}
+
+.TopPage {
   height: 500px;
-  border: 1px solid #D8D8D8;;
-  padding: 30px;
-  margin: 15px;
-  border-radius: 8px !important;
-  box-shadow: darkmagenta;
+  padding: 20px 70px 120px 75px;
+  &__Contents {
+    margin-top: 100px;
+    &__content {
+    width: 2000px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: 200;
+    letter-spacing: 0.15em;
+    }
+  }
+}
+
+.TopArticles {
+  margin-top: 20px;
+  &__TopNews {
+    float: left;
+    width: 250px;
+    height: 450px;
+    border: 1px solid #D8D8D8;;
+    padding: 30px;
+    margin: 15px;
+    border-radius: 8px !important;
+    box-shadow: darkmagenta;
+  }
 }
 .TopPageContents {
   width: 400px;
-  height: 400px;
+  height: 450px;
   list-style: none;
   img {
     border-radius: 8px !important;
@@ -26,6 +101,12 @@
     display: block;
     margin-top: 5px;
     width: 100px;
+    img {
+      border-radius: 8px !important;
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+    }
     a {
       display: none;
       width: 300px;
@@ -35,12 +116,14 @@
     margin-top: 5px;
     font-weight: bold;
     font-size: 18px;
-    width: 300px;
+    width: 250px;
+    height: 50px;
+    overflow: scroll;
   }
   &__Description {
-    margin-top: 5px;
-    height: 100px;
-    width: 300px;
+    margin-top: 10px;
+    height: 110px;
+    width: 250px;
     font-size: 16px;
     overflow: scroll;
   }
