@@ -3,13 +3,13 @@
 %body
   %ul.slider
     %li
-      = link_to image_tag("ca.jpg", alt: "Rails logo", class: "torilog_Logo")
+      = link_to image_tag("TopOne.jpg", alt: "Rails logo", class: "torilog_Logo")
     %li
-      = link_to image_tag("mount_fuji.jpg", alt: "Rails logo", class: "torilog_Logo")
+      = link_to image_tag("TopTwo.jpg", alt: "Rails logo", class: "torilog_Logo")
     %li
-      = link_to image_tag("ocean.jpg", alt: "Rails logo", class: "torilog_Logo")
+      = link_to image_tag("TopThree.jpg", alt: "Rails logo", class: "torilog_Logo")
     %li
-      = link_to image_tag("ca.jpg", alt: "Rails logo", class: "torilog_Logo")
+      = link_to image_tag("TopFour.jpg", alt: "Rails logo", class: "torilog_Logo")
 
 .TopPage
   .TopPage__Contents
@@ -28,3 +28,5 @@
               = link_to article.title , article_path(article.id), method: :get
             .TopPageContents__Description
               = link_to article.description , article_path(article.id), method: :get
+
+= render "site_map"
