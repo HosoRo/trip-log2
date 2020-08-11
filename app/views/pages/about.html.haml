@@ -1,10 +1,33 @@
 %header
 = render('templates/header')
-%h1 About Trip Log
-= link_to 'トップページ', root_path
-
 .About
   .About__Contents
     .About__Contents__Content
+    %h1 About Trip Log
+    .About__Contents__ContentTwo
+    = link_to 'トップページ', root_path
+  .About__Body
+    .About__Body__ParagraphLeft
+    .About__Body__ParagraphRight
+      .About__Body__ParagraphRight__FirstLine
+        旅には新しい経験、出会いを与えてくれる。
+        %br
+          あなたの経験はあなたでしか語れないもの。
+      .About__Body__ParagraphRight__SecondLine
+        Trip Log
+      .About__Body__ParagraphRight__ThirdLine
+        人生の楽しみを記録して、新たな出会いを繋いでいく。
+        %br
+          生きることの楽しみを、人と繋がる喜びを、
+          %br
+            豊かな人生を後押しすること。
+            %br
+              さらなる喜びを求めて、あなたの旅路を記録しよう。
+    
+
+    -# .About__Contents__ContentTwo
+    -# = link_to image_tag("vacation.jpg", alt: "about_trip_log", class: "travel", with: "2000", height: "1000")
+
+
 
 = render "/pages/site_map"
