@@ -32,3 +32,135 @@
           = f.password_field :password_confirmation, autocomplete: "off"
       .actions
         = f.submit "会員登録", class: 'Button UserButton'
+
+.AccountPage__Second
+  .AccountPage__Second__Contents
+    Trip Logでは様々なサービスがあります。
+  .AccountPage__Second__ContentRight
+    .AccountPage__Second__ContentRight__One
+      %i.fas.fa-users
+      %h1 コミュニティグループ
+      %p 旅の話題で盛り上がる
+    .AccountPage__Second__ContentRight__Two
+      %i.fas.fa-gifts
+      %h1 フリーマーケット
+      %p 旅の必需品を手に入れよう
+    .AccountPage__Second__ContentRight__Three
+      %i.fas.fa-book
+      %h1 ブログ
+      %p 旅の記録を積み重ねよう
+
+.AccountPage__Fourth
+  .AccountPage__Fourth__Contents
+    どこへでも行ける。そう思える刺激を求めて。
+    .AccountPage__Fourth__Contents__One
+
+
+.AccountPage__Third
+  .AccountPage__Third__Contents
+    こだわりを持つあなたに
+  .AccountPage__Third__ContentLeft
+    .AccountPage__Third__ContentLeft__One
+      %i.fas.fa-user-friends
+      %h1.main メンターから学ぶ
+      %p ライティング
+      %p マーケティング
+    .AccountPage__Third__ContentLeft__Two
+      %i.fas.fa-chalkboard-teacher
+      %h1 添削
+      %p 商品出品文章
+      %p ブログ内容・文章構築
+    .AccountPage__Third__ContentLeft__Three
+      %i.fas.fa-tasks
+      %h1 マネジメント
+      %p ブランディング
+      %p スキルアップ
+
+  .AccountPage__Third__ContentRight
+    .AccountPage__Third__ContentRight__One
+      %h1 パーソナル
+      %i.fas.fa-coffee
+      %p 無料
+      %ul 
+        %li 
+          %i.far.fa-check-circle
+          コミュニティ・グループ
+        %li 
+          %i.far.fa-check-circle
+          旅ブログ
+        %li 
+          %i.far.fa-check-circle
+          フリーマーケット
+        %li.none
+          %i.far.fa-check-circle
+          メンター
+        %li.none
+          %i.far.fa-check-circle
+          添削
+        %li.none
+          %i.far.fa-check-circle
+      .AccountPage__Third__ContentRight__One__Extra
+        = link_to "無料会員登録", new_user_registration_path
+    .AccountPage__Third__ContentRight__Two
+      %h1 スキルアップ
+      %i.fas.fa-universal-access
+      %p 1,000円 /月
+      %ul 
+        %li 
+          %i.far.fa-check-circle
+          コミュニティ・グループ
+        %li 
+          %i.far.fa-check-circle
+          旅ブログ
+        %li 
+          %i.far.fa-check-circle
+          フリーマーケット
+        %li 
+          %i.far.fa-check-circle
+          メンター
+        %li 
+          %i.far.fa-check-circle
+          添削
+        %li.none
+          %i.far.fa-check-circle
+      .AccountPage__Third__ContentRight__Two__Extra
+        = link_to "お申し込み", new_user_registration_path
+    .AccountPage__Third__ContentRight__Three
+      %h1 ビジネス
+      %i.fas.fa-globe
+      %p 3,000円 /月
+      %ul 
+        %li 
+          %i.far.fa-check-circle
+          コミュニティ・グループ
+        %li 
+          %i.far.fa-check-circle
+          旅ブログ
+        %li 
+          %i.far.fa-check-circle
+          フリーマーケット
+        %li 
+          %i.far.fa-check-circle
+          メンター
+        %li 
+          %i.far.fa-check-circle
+          添削
+        %li 
+          %i.far.fa-check-circle
+          マネジメント
+      .AccountPage__Third__ContentRight__Three__Extra
+        = link_to "お問い合わせ", new_user_registration_path
+
+.AccountPage__Sixth
+  .AccountPage__Sixth__Extra
+
+.AccountPage__Fifth
+  .AccountPage__Fifth__Contents
+    あなたも一緒に旅に出ませんか？
+    .AccountPage__Fifth__Contents__One
+      = link_to "スキルアップを目指す", new_user_registration_path
+    .AccountPage__Fifth__Contents__Two
+      = link_to "まずは無料ではじめてみる", new_user_registration_path
+
+#page_top
+  %a{:href => "#"}
