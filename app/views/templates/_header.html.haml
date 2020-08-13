@@ -3,9 +3,9 @@
     = link_to image_tag("ToripLog.png", class: "Trip_Log_Logo"), |
   root_path       
   .header__middle
-    = form_with url: search_articles_path, local: true, method: :get, class: "search-form" do |f|
-      = f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
-      = f.submit "検索", class: "search-btn"
+    = form_with url: search_articles_path, local: true, method: :get, class: "search-form" do |form|
+      = form.text_field :keyword, placeholder: "投稿タイトルを検索する", class: "search-input"
+      = form.submit "検索", class: "search-btn"
   .header__right
     .header__right__username
       = current_user.name

@@ -121,16 +121,18 @@ a:hover {
 
 //index.html.hamlのcssをここから装飾する
 .ArticleTop {
-  @include page_fixed;
-  padding: 100px 0px 120px 0px;
-  
+  width: 100vw;
+  height: calc( 100vh - 10vh);
+  padding: 30px 60px;
+  box-sizing: border-box;
+  overflow: scroll;
 }
 
 .ArticleTop__page {
+  width: 100vw;
   font-size: 30px;
   font-weight: 200;
   letter-spacing: 0.15em;
-  margin-left: 100px;
 }
 
 .ArticleTop__page__items {
