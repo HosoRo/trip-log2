@@ -51,13 +51,7 @@
       font-weight: bold;
       margin-right: 15px;
     }
-    &__mypage {
-      @include mypage_logout;
-    }
-    &__logout {
-      @include mypage_logout;
-    }
-    &__triplog {
+    &__mypage, &__logout, &__triplog, &__new  {
       @include mypage_logout;
     }
   }

@@ -9,6 +9,8 @@
   .header__right
     .header__right__username
       = current_user.name
+    .header__right__new
+      = link_to "新規投稿", new_article_path
     .header__right__mypage
       = link_to "マイページ", "/users/#{current_user.id}"
     .header__right__triplog
