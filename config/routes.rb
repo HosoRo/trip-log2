@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#index'
   get 'about', to: 'pages#about'
   get 'root', to: 'pages#index'
-
   get '/login', to: 'pages#index'
   post '/login', to: 'pages#index'
   # resources :articles, only: [:index, :new, :create, :destroy, :edit, :show, :update]

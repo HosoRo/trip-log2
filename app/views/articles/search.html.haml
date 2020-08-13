@@ -4,6 +4,21 @@
 -#   = form_with(url: search_articles_path, local: true, method: :get, class: "search-form") do |f|
 -#     = f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
 -#     = f.submit "検索", class: "search-btn"
-.contents.row
-  - @articles.each do |article|
-    = render partial: "article", locals: { article: article }
+.SearchPage
+  .SearchPage__Top
+    = link_to '記事一覧', articles_path
+    .Contents
+      - @articles.each do |article|
+        .Search
+          .Search__Name
+            投稿者
+            .Search__Name__SubName
+              = link_to article.user.name, user_path(article.user.id), method: :get
+          .Content
+            .Content__Image
+              %img{:src => "#{article.image}", :width => "400"}/
+              = link_to article_path(article.id), method: :get
+            .Content__Title
+              = link_to article.title , article_path(article.id), method: :get
+            .Content__Description
+              = link_to article.description , article_path(article.id), method: :get
