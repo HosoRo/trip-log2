@@ -20,7 +20,7 @@
           .murata__top
             投稿者
             .SubName
-              = link_to article.user.name, user_path(article.user.id), method: :get
+              = link_to article.user.name
             .SubItems
               .SubItems__edit
                 = link_to '編集', edit_article_path(article.id), method: :get

@@ -24,7 +24,14 @@
     @include page_body;
     width: 1000px;
     text-align: left;
+    &__name {
+      a { 
+      font-size: 30px;
+      text-decoration: none;
+      }
+    }
     &__title {
+      margin-top: 50px;
       font-size: 32px;
       font-weight: bold;
       width: 1000px;
@@ -35,7 +42,8 @@
       margin: 30px 0px;
     }
     &__image {
-      margin-bottom: 30px;
+      margin: 50px 0 30px 0;
+      text-align: center;
     }
   }
   &__ShowReturn {
@@ -72,4 +80,8 @@
   padding: 50px;
   width: 1000px;
   text-align: left;
+  h4 {
+    font-size: 20px;
+    color: #383838;
+  }
 }
