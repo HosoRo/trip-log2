@@ -8,8 +8,33 @@
       = form.submit "検索", class: "search-btn"
   .header__right
     .header__right__username
-      = current_user.name
-    .header__right__mypage
-      = link_to "マイページ", "/users/#{current_user.id}"
-    .header__right__triplog
-      = link_to 'About Trip-Log', about_path
+      = link_to current_user.name, "/users/#{current_user.id}"
+      -# = current_user.name
+      .upper-field__navigate
+        .upper-field__navigate__left-side
+          %ul.upper-field__navigate__left-side__item
+            %li
+              %i.fas.fa-th-large
+              %ul
+                = link_to 'About Trip-Log', about_path
+                %li
+                  = link_to 'トップページ', root_path
+                %li
+                  = link_to '記事一覧', articles_path
+                %li
+                  = link_to "新規投稿", new_article_path
+                %li
+                  = link_to "マイページ", "/users/#{current_user.id}"
+                %li
+                  = link_to 'アカウント編集', edit_user_registration_path
+                %li
+                  = link_to "ログアウト", destroy_user_session_path, method: :delete
+
+
+
+    -# .header__right__new
+    -#   = link_to "新規投稿", new_article_path
+    -# .header__right__mypage
+    -#   = link_to "マイページ", "/users/#{current_user.id}"
+    -# .header__right__triplog
+    -#   = link_to 'About Trip-Log', about_path

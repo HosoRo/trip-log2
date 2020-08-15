@@ -21,17 +21,18 @@
 
 .fa.fa-angle-left.arrow.arrow-left.slick-arrow {
   position: absolute;
-  color: #57C3E9;
+  color: #fff;
   font-size: 30px;
   top: 500px;
+  display: none;
 }
 
 .fa.fa-angle-right.arrow.arrow-right.slick-arrow {
   position: absolute;
-  color: #57C3E9;
+  color: #fff;
   font-size: 30px;
   left: 1780px;
-  
+  display: none;
 }
 
 .slick-dots {

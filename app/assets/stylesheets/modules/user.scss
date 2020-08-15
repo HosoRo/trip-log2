@@ -49,19 +49,96 @@
     align-items: center;
     &__username {
       font-weight: bold;
-      margin-right: 15px;
+      margin: 20px 30px 0 30px;
+      font-size: 20px;
+      color: #fa4141;
     }
-    &__mypage {
-      @include mypage_logout;
-    }
-    &__logout {
-      @include mypage_logout;
-    }
-    &__triplog {
-      @include mypage_logout;
+    // &__mypage, &__logout, &__triplog, &__new  {
+    //   @include mypage_logout;
+    // }
+  }
+}
+.upper-field{
+  padding: 0 60px;
+  &__navigate{
+    float: right;
+    &__left-side{
+      display: flex;
+      text-align: left;
+      &__item{
+        margin: 0;
+        padding: 0 0 0 15px;
+        background-color: #fff;
+      }
+      &__item li{
+        width: 120px;
+        display: inline-block;
+        list-style-type: none;
+        position: relative;
+      }
+      &__item a{
+        background-color: #fff;
+        color: black;
+        line-height: 40px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        background-color: #57C3E9;
+        color: #fff;
+        border-radius: 10px;
+      }
+      &__item a:hover{
+        color: #fa4141;
+      }
+      &__item ul{
+        margin: 0;
+        padding: 0;
+        display: none;
+        position: absolute;
+        z-index: 1;
+      }
+      &__item ul li{
+        width: 250px;
+        margin-top: 10px;
+        background-color: #57C3E9;
+        text-align: center;
+        border-radius: 10px;
+      }
+      &__item ul li a{
+        line-height: 35px;
+        text-align: center;
+        padding-left: 5px;
+        font-weight: normal;
+        background-color: #57C3E9;
+      }
+      &__item ul li a:hover{
+        color: #fa4141;
+      }
+      &__item ul ul{
+        margin: 0px;
+        padding: 0px;
+        display: none;
+        position: absolute;
+        top: -1px;
+        left: 100%;
+      }
     }
   }
 }
+
+.fas.fa-th-large {
+  font-size: 30px;
+  color: #57C3E9;
+}
+
+
+
+
+
+
+
+
+
 
 .body {
   width: 100vw;

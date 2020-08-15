@@ -4,7 +4,7 @@ class CreateArticles < ActiveRecord::Migration[6.0]
      t.string :title, null: false
      t.text :description, null: false
      t.string :image
-     t.timestamps, null: false
+     t.timestamps
     end
   end
 end

@@ -4,39 +4,31 @@
   .UserInfo__name
     = @name
     さんの投稿一覧
-    .UserInfo__name__UnderLine
-      .UserInfo__name__UnderLine__toppage
-        = link_to 'トップページ', root_path
-      .UserInfo__name__UnderLine__articles
-        = link_to '記事一覧', articles_path
-      .UserInfo__name__UnderLine__AccountEdit
-        = link_to 'アカウント編集', edit_user_registration_path
-      .UserInfo__name__UnderLine__LogOut
-        = link_to "ログアウト", destroy_user_session_path, method: :delete   
-  .UserInfo__contents
-    .Contents
-      - @articles.each do |article|
-        .murata
-          .murata__top
-            投稿者
-            .SubName
-              = link_to article.user.name, user_path(article.user.id), method: :get
-            .SubItems
-              .SubItems__edit
-                = link_to '編集', edit_article_path(article.id), method: :get
-              .SubItems__detail
-                = link_to '詳細', article_path(article.id), method: :get
-              .SubItems__delete
-                = link_to '削除', article_path(article.id), method: :delete, data: {confirm: "本当に削除しますか?"}
-          
-          .Content
-            .Content__Image
-              %img{:src => "#{article.image}", :width => "400"}/
-              = link_to article_path(article.id), method: :get
-            .Content__Title
-              = link_to article.title , article_path(article.id), method: :get
-            .Content__Description
-              = link_to article.description , article_path(article.id), method: :get
+    .UserInfo__contents
+      .Contents
+        - @articles.each do |article|
+          .murata
+            .murata__top
+              投稿者
+              .SubName
+                = link_to article.user.name
+              .SubItems
+                - if user_signed_in? && current_user.id == article.user_id
+                  .SubItems__edit
+                    = link_to '編集', edit_article_path(article.id), method: :get
+                  .SubItems__detail
+                    = link_to '詳細', article_path(article.id), method: :get
+                  .SubItems__delete
+                    = link_to '削除', article_path(article.id), method: :delete, data: {confirm: "本当に削除しますか?"}
+            
+            .Content
+              .Content__Image
+                %img{:src => "#{article.image}", :width => "400"}/
+                = link_to article_path(article.id), method: :get
+              .Content__Title
+                = link_to article.title , article_path(article.id), method: :get
+              .Content__Description
+                = link_to article.description , article_path(article.id), method: :get
                 
 = render "/pages/site_map"
               
