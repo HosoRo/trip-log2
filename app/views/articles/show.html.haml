@@ -5,6 +5,9 @@
     .ShowArticle__detail
       .ShowArticle__detail__name
         = link_to @article.user.name, user_path(@article.user.id), method: :get
+      .ShowArticle__detail__like
+        %div{:id => "like-btn#{@article.id}"}
+        = render partial: "likes/like", locals: { article: @article }
       .ShowArticle__detail__title
         #{@article.title}
       .ShowArticle__detail__description

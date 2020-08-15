@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   get 'root', to: 'pages#index'
   get '/login', to: 'pages#index'
   post '/login', to: 'pages#index'
-  # resources :articles, only: [:index, :new, :create, :destroy, :edit, :show, :update]
+
   resources :articles do
     resources :comments, only: :create
+    resource :likes, only: [:create, :destroy]
     collection do
       get 'search'
     end
