@@ -23,6 +23,7 @@ class ArticlesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @article.comments.includes(:user)
+    @likes_count = Like.where(article_id: @article.id).count
   end
 
   def edit

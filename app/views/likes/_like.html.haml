@@ -1,0 +1,8 @@
+- if user_signed_in? && article.liked_by?(current_user)
+  = link_to article_likes_path(article.id),  method: :delete, class: "like-btn-unlike" , remote: true do
+    %i.fas.fa-heart
+    = @likes_count
+- else
+  = link_to article_likes_path(article.id), method: :post, class: "like-btn" , remote: true do
+    %i.fas.fa-heart
+    = @likes_count
