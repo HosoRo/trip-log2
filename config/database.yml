@@ -83,3 +83,6 @@ production:
   database: trip_log2_production
   username: trip_log2
   password: <%= ENV['TRIP_LOG2_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5

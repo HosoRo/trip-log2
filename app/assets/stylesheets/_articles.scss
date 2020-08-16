@@ -152,16 +152,26 @@ a:hover {
 }
 
 .Contents {
-  // border: outset 2px;
   padding: 10px 20px;
-  margin: 10px 50px 10px 80px;
+  margin: 10px 0 10px 30px;
   overflow: hidden;
-  // display: flex;
-  // justify-content: space-around;
 }
 .murata {
   float: left;
-  width: 430px;
+  width: 230px;
+  height: 450px;
+  border: 1px solid #D8D8D8;;
+  padding: 30px;
+  margin: 10px;
+  border-radius: 8px !important;
+  box-shadow: darkmagenta;
+  color: #383838;
+  font-size: 16px;
+}
+
+.MyPage {
+  float: left;
+  width: 230px;
   height: 500px;
   border: 1px solid #D8D8D8;;
   padding: 30px;
@@ -171,32 +181,42 @@ a:hover {
   color: #383838;
   font-size: 16px;
 }
+
+
+
 .Content {
   width: 400px;
-  height: 400px;
+  height: 450px;
   list-style: none;
   img {
     border-radius: 8px !important;
-    width: 400px;
+    width: 230px;
     height: 300px;
     object-fit:cover;
   }
   &__Image {
     display: block;
     margin-top: 5px;
-    a {
-      display: none;
+    width: 100px;
+    img {
+      border-radius: 8px !important;
+      width: 230px;
+      height: 250px;
+      object-fit: cover;
     }
   }
   &__Title {
-    margin: 10px 0;
+    margin-top: 5px;
     font-weight: bold;
     font-size: 18px;
+    width: 250px;
     height: 50px;
     overflow: scroll;
   }
   &__Description {
-    height: 100px;
+    margin-top: 10px;
+    height: 110px;
+    width: 250px;
     font-size: 16px;
     overflow: scroll;
   }
@@ -206,7 +226,7 @@ a:hover {
   width: 10vw;
   display: flex;
   justify-content: space-around;
-  margin-bottom: 30px;
+  margin: 10px 0;
   &__edit {
     @include SubItems;
   }
