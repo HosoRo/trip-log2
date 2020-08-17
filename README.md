@@ -28,20 +28,12 @@ Trip Logは、個々の成長と周囲との繋がりから、クライアント
 ## DEMO
 - 会員登録/ログイン
   - TripLogの簡易的なランディングページになっています。登録後、トップページへ遷移します。
+  [![](https://i.gyazo.com/18f0e3f5be7dd24c6c116a76b8170ce9.gif)](https://gyazo.com/18f0e3f5be7dd24c6c116a76b8170ce9)
+  
+  
 - トップページ
   - 新着投稿が掲載されます。
-  [![Image from Gyazo](https://i.gyazo.com/7d1a16441b6fb2ac7d292fa6ed7091b1.gif)](https://gyazo.com/7d1a16441b6fb2ac7d292fa6ed7091b1)
-
-- ブログ投稿/編集/削除機能
-  - タイトルと本文、写真選択をして投稿します。
-  [![Image from Gyazo](https://i.gyazo.com/39be094cf91eed14962692110135da5a.gif)](https://gyazo.com/39be094cf91eed14962692110135da5a)
-
-- コメント機能
-  - 投稿されたものにコメントを入れられます。
- [![Image from Gyazo](https://i.gyazo.com/be356a1e95d370afb9b9b9b8d8a0d2d9.gif)](https://gyazo.com/be356a1e95d370afb9b9b9b8d8a0d2d9)
-
-- タイトル簡単検索機能
-  - 記事のタイトル名から検索可能です。
+  [![Image from Gyazo](https://i.gyazo.com/db24319ef4c8496cba1c5acedbe54f29.gif)](https://gyazo.com/db24319ef4c8496cba1c5acedbe54f29)
 
 ## 工夫したポイント
 - 会員登録/ログイン前に、サービスの詳細を記載しています。
